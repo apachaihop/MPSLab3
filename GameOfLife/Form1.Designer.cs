@@ -39,12 +39,18 @@ namespace TP14_JeudelaVie
             this.lentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.middleSpeedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rapideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.redToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.greanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myTimer = new System.Windows.Forms.Timer(this.components);
             this.squareModel = new System.Windows.Forms.PictureBox();
             this.squareModelAlive = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuEtatVitesse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.squareModel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.squareModelAlive)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuEtatVitesse
@@ -52,7 +58,8 @@ namespace TP14_JeudelaVie
             this.menuEtatVitesse.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuEtatVitesse.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.etatToolStripMenuItem,
-            this.vitesseToolStripMenuItem});
+            this.vitesseToolStripMenuItem,
+            this.toolStripMenuItem1});
             this.menuEtatVitesse.Location = new System.Drawing.Point(0, 0);
             this.menuEtatVitesse.Name = "menuEtatVitesse";
             this.menuEtatVitesse.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -74,28 +81,28 @@ namespace TP14_JeudelaVie
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // runToolStripMenuItem
             // 
             this.runToolStripMenuItem.Name = "runToolStripMenuItem";
-            this.runToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.runToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.runToolStripMenuItem.Text = "Start";
             this.runToolStripMenuItem.Click += new System.EventHandler(this.runToolStripMenuItem_Click);
             // 
             // stopToolStripMenuItem
             // 
             this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
-            this.stopToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.stopToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.stopToolStripMenuItem.Text = "Stop";
             this.stopToolStripMenuItem.Click += new System.EventHandler(this.stopToolStripMenuItem_Click);
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.quitterToolStripMenuItem.Text = "Exit";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -130,6 +137,29 @@ namespace TP14_JeudelaVie
             this.rapideToolStripMenuItem.Text = "Quick";
             this.rapideToolStripMenuItem.Click += new System.EventHandler(this.quickToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.redToolStripMenuItem,
+            this.greanToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(47, 20);
+            this.toolStripMenuItem1.Text = "Team";
+            // 
+            // redToolStripMenuItem
+            // 
+            this.redToolStripMenuItem.Name = "redToolStripMenuItem";
+            this.redToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.redToolStripMenuItem.Text = "Red";
+            this.redToolStripMenuItem.Click += new System.EventHandler(this.redToolStripMenuItem_Click);
+            // 
+            // greanToolStripMenuItem
+            // 
+            this.greanToolStripMenuItem.Name = "greanToolStripMenuItem";
+            this.greanToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.greanToolStripMenuItem.Text = "Grean";
+            this.greanToolStripMenuItem.Click += new System.EventHandler(this.greanToolStripMenuItem_Click);
+            // 
             // myTimer
             // 
             this.myTimer.Tick += new System.EventHandler(this.tmrClock_Tick);
@@ -145,18 +175,33 @@ namespace TP14_JeudelaVie
             // 
             // squareModelAlive
             // 
-            this.squareModelAlive.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.squareModelAlive.BackColor = System.Drawing.Color.Lime;
             this.squareModelAlive.Location = new System.Drawing.Point(121, 78);
             this.squareModelAlive.Name = "squareModelAlive";
             this.squareModelAlive.Size = new System.Drawing.Size(18, 19);
             this.squareModelAlive.TabIndex = 2;
             this.squareModelAlive.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Red;
+            this.pictureBox1.Location = new System.Drawing.Point(158, 78);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(18, 19);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(391, 244);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.squareModelAlive);
             this.Controls.Add(this.squareModel);
             this.Controls.Add(this.menuEtatVitesse);
@@ -167,6 +212,7 @@ namespace TP14_JeudelaVie
             this.menuEtatVitesse.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.squareModel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.squareModelAlive)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,6 +233,11 @@ namespace TP14_JeudelaVie
         private System.Windows.Forms.Timer myTimer;
         private System.Windows.Forms.PictureBox squareModel;
         private System.Windows.Forms.PictureBox squareModelAlive;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem redToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem greanToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
